@@ -12,6 +12,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.CompareTag("Player")) {
             GameManager.instance.AddScorePoint(1);
+            AudioManager.Instance.PlayCoinSound();
             Destroy(gameObject);
         }
     }
