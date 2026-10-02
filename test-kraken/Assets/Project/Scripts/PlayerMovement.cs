@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
         Debug.DrawRay(transform.position, Vector2.down*rayLength, Color.red);
+        
     }
 
     bool IsGrounded()
