@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 052b085c0cb77474293ef06e1066076f, type: 3}
-  m_Name: Goblin
+  m_Name: Orc
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: Goblin
-  maxHealth: 5
-  speed: 2
-  damage: 1
-  color: {r: 0.044874907, g: 1, b: 0, a: 1}
+  enemyName: 
+  maxHealth: 7
+  speed: 1
+  damage: 3
+  color: {r: 0.4811321, g: 0.0022694964, b: 0.0022694964, a: 1}

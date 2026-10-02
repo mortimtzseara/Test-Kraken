@@ -1,15 +1,16 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Enemy : MonoBehaviour
 {
-    public EnemyData data;
+    public EnemyData[] enemyArray;
     public int currentHealth;
+    private EnemyData currentEnemy;
 
     void Start()
     {
-        currentHealth = data.maxHealth;
-        GetComponent<SpriteRenderer>().color = data.color;
+        currentEnemy = GenerateRandomEnemyData();
+        currentHealth = currentEnemy.maxHealth;
+        GetComponent<SpriteRenderer>().color = currentEnemy.color;
     }
     void Update()
     {
@@ -17,14 +18,19 @@ public class Enemy : MonoBehaviour
 		{
 			TakeDamage(1);
 		}
-		transform.Translate(Vector2.left * data.speed * Time.deltaTime);		
+		transform.Translate(Vector2.left * currentEnemy.speed * Time.deltaTime);		
 	}
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        if (currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+        //if (currentHealth <= 0)
+        //{
+        //    enemyPool.ReturnObject(gameObject);
+		//}
+    }
+    public EnemyData GenerateRandomEnemyData()
+    {
+        int index = Random.Range(0, enemyArray.Length);
+        return enemyArray[index];
     }
 }
